@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./style.css"></link>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900;1000&display=swap" rel="stylesheet"> 
+    
+</head>
+<body dir="rtl" onload="getCar()">
+    
+    <div class="cars-nav">
+        <a href="aboutus.html">
+            <div class="cars-nav-item">من نحن</div>
+        </a>
+        <a href="cars.html">
+            <div class="cars-nav-item">السيارات</div>
+        </a>
+    </div>
+
+    <div class="car-details">
+
+        <h1>عرض سيارة</h1>
+
+        <div class="car-details-body">
+            <h3>معلومات السيارة</h3>
+        
+            <div class="details">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>نوع السيارة</td>
+                            <td class="car-type"></td>
+                        </tr>
+                        <tr>
+                            <td>تاريخ الصنع</td>
+                            <td class="car-factory-date"></td>
+                        </tr>
+                        <tr>
+                            <td>نوع الإيجار</td>
+                            <td class="rent-type"></td>
+                        </tr>
+                        <tr>
+                            <td>قيمة الإيجار/متضمنة الضرائي</ف>
+                            <td>
+                                <div class="">
+                                    الأجار اليومي: 
+                                    <span class="rent-cost"></span>
+                                    ل.س
+                                </div>
+                                <div class="">رسم إعادة إعمار: 
+                                    <span class="rent-reconstruction-fee"></span>
+                                    ل.س (1%)
+                                </div>
+                                <div class="">الضريبة: 
+                                    <span class="rent-tax"></span>
+                                    ل.س (5% من قيمة الإيجار)
+                                </div>
+                                <div class="">
+                                    <strong>الإجمالي: 
+                                        <span class="rent-total-cost"></span>
+                                         ل.س</strong>
+                                </div>
+                            </td>
+                        </tr>
+                    
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>صور السيارة</h3>
+
+            <div class="car-images">
+                
+            </div>
+
+        </div>
+
+        <div class="control">
+            <div>
+                <input type="checkbox" id="agreement"> متابعة
+            </div>
+            <a class="" href="cars.html">
+                <div class="cancellation">
+                    إلغاء
+                </div>
+            </a>
+        </div>
+
+
+        <div class="form">
+            <h3>طلب استئجار سيارة</h3>
+            <form action="" method="post" id="formData">
+                <div class="margin-bottom-30">
+                    <label for="name">الأسم الكامل لمقدم الطلب</label>
+                    <input type="text" name="name" id="name" required>
+                    <div class="name-error-message"></div>
+                </div>
+
+               <div class="margin-bottom-30">
+                    <label for="idnumber">الرقم الوطني</label>
+                    <input type="text" name="idnumber" id="idnumber" required>
+                    <div class="idnumber-error-message"></div>
+               </div>
+
+                <div class="margin-bottom-30">
+                    <label for="birthdate">تاريخ الولادة</label>
+                    <input type="date" name="birthdate" id="birthdate" required>
+                </div>
+
+                <div class="margin-bottom-30">
+                    <label for="mobile">رقم الموبايل</label>
+                    <input type="text" name="mobile" id="mobile" required>
+                    <div class="mobile-error-message"></div>
+                </div>
+
+               <div class="margin-bottom-30">
+                    <label for="email">عنوان الحساب</label>
+                    <input type="email" name="email" id="email" required>
+               </div>
+
+               <div class="margin-bottom-30">
+                    <label for="rentCount">عدد الأيام او الأسابيع او الأشهر المطلوبة</label>
+                    <input type="number" name="rentCount" id="rentCount" min="1" required>
+               </div>
+
+                <div class="captcha">
+                    <div class="captcha-form">
+                        <div id="image" selectable="False"></div>
+                        
+                        <div class="refresh-captcha" onclick="refeshCaptcha()">
+                            <i class="fas fa-sync"></i>
+                        </div>
+                        
+                        <input type="text" id="captchaInput" placeholder="Captcha code" />
+                        
+                        
+
+                        <div class="error-message"></div>
+                    </div>
+                </div>
+                
+                <input type="submit" class="formbtn" value="إرسال">
+            </form>
+        </div>
+    </div>
+
+    <script src="./myFucntion.js"></script>
+</body>
+</html>
